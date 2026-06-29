@@ -7,6 +7,8 @@ plugins {
 }
 
 tasks.register<Copy>("generateDescriptions") {
+  group = "Theme park"
+  description = "Generates ride descriptions including token substitution"
   from("descriptions")
   into(layout.buildDirectory.dir("descriptions"))
   filter<ReplaceTokens>("tokens" to mapOf("THEME_PARK_NAME" to "Grelephant's Wonder World"))
